@@ -1,21 +1,23 @@
-pub fn sum(a: u8, b: u8) -> u8{
-    a+b
+pub fn sum(a: u8, b: u8) -> u8 {
+    a.checked_add(b).expect("ERROR: attempt to add with overflow")
 }
 
 pub fn diff(a: i16, b: i16) -> i16 {
-    a-b
+    a.checked_sub(b).expect("ERROR: attempt to subtract with overflow")
 }
 
 pub fn pro(a: i8, b: i8) -> i8 {
-    a*b
+    a.checked_mul(b).expect("ERROR: attempt to multiply with overflow")
 }
 
 pub fn quo(a: i32, b: i32) -> i32 {
-    a/b
+    assert!(b != 0, "ERROR: attempt to divide by zero");
+    a.checked_div(b).expect("ERROR: attempt to divide with overflow")
 }
 
 pub fn rem(a: i32, b: i32) -> i32 {
-    a%b
+    assert!(b != 0, "ERROR: attempt to divide by zero");
+    a.checked_rem(b).expect("ERROR: attempt to calculate remainder with overflow")
 }
 
 #[cfg(test)]
