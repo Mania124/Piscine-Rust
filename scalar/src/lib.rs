@@ -12,12 +12,12 @@ pub fn pro(a: i8, b: i8) -> i8 {
 
 pub fn quo(a: i32, b: i32) -> i32 {
     assert!(b != 0, "ERROR: attempt to divide by zero");
-    a.checked_div(b).expect("ERROR: attempt to divide with overflow")
+    a/b
 }
 
 pub fn rem(a: i32, b: i32) -> i32 {
     assert!(b != 0, "ERROR: attempt to divide by zero");
-    a.checked_rem(b).expect("ERROR: attempt to calculate remainder with overflow")
+    a%b
 }
 
 #[cfg(test)]
