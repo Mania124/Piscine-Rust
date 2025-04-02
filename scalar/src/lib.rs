@@ -10,13 +10,13 @@ pub fn pro(a: i8, b: i8) -> i8 {
     a.checked_mul(b).expect("ERROR: attempt to multiply with overflow")
 }
 
-pub fn quo(a: i32, b: i32) -> i32 {
-    assert!(b != 0, "ERROR: attempt to divide by zero");
+pub fn quo(a: f32, b: f32) -> f32 {
+    assert!(b != 0.0, "ERROR: attempt to divide by zero");
     a/b
 }
 
-pub fn rem(a: i32, b: i32) -> i32 {
-    assert!(b != 0, "ERROR: attempt to divide by zero");
+pub fn rem(a: f32, b: f32) -> f32 {
+    assert!(b != 0.0, "ERROR: attempt to divide by zero");
     a%b
 }
 
@@ -32,9 +32,9 @@ mod tests {
         assert_eq!(result, 0);
         let result = pro(2, 2);
         assert_eq!(result, 4);
-        let result = quo(2, 2);
-        assert_eq!(result, 1);
-        let result = rem(2, 2);
-        assert_eq!(result, 0);
+        let result = quo(2.0, 2.0);
+        assert_eq!(result, 1.0);
+        let result = rem(2.0, 2.0);
+        assert_eq!(result, 0.0);
     }
 }
