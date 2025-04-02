@@ -13,7 +13,7 @@ fn main() {
         .expect("failed to read line!");
         ans = ans.trim().to_string();
         if ans==answer{
-            println!("{}",counter);
+            println!("Number of trials: {}",counter);
             break;
         }
     }
