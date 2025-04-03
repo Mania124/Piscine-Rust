@@ -1,6 +1,6 @@
 pub fn nbr_function(c: i32) -> (i32, f64, f64) {
     let new = c.abs() as f64;
-    let exponential_value = new.exp();
+    let exponential_value = (c as f64).exp();
     let natural_log = if new == 0.0 {
         f64::NEG_INFINITY
     } else {
