@@ -1,5 +1,5 @@
 pub fn str_len(s: &str) -> usize {
-    s.len()
+    s.chars().count()
 }
 
 #[cfg(test)]
@@ -10,5 +10,7 @@ mod tests {
     fn it_works() {
         let result = str_len("hello");
         assert_eq!(result, 5);
+        let result = str_len("camelCase");
+        assert_eq!(result, 9);
     }
 }
