@@ -15,7 +15,7 @@ impl Circle {
     }
     pub fn intersect(&self, other: Circle) -> bool {
         let dis = (self.center).distance(other.center);
-        if dis < self.radius || dis < other.radius {
+        if dis < self.radius + other.radius {
             true
         } else {
             false
