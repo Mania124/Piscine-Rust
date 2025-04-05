@@ -15,7 +15,7 @@ impl Circle {
     }
     pub fn intersect(&self, other: Circle) -> bool {
         let dis = (self.center).distance(&other.center);
-        if dis <= self.radius || dis <= other.radius {
+        if dis < self.radius || dis < other.radius {
             true
         } else {
             false
@@ -35,9 +35,7 @@ pub struct Point(pub f64, pub f64);
 impl Point {
     // Distance between t
     pub fn distance(&self, other: &Point) -> f64 {
-        let dx = self.0 - other.0;
-        let dy = self.1 - other.1;
-        (dx.powi(2) + dy.powi(2)).sqrt()
+        ((self.0 - other.0).powi(2) + (self.1 - other.1).powi(2)).sqrt()
     }
 }
 #[cfg(test)]
