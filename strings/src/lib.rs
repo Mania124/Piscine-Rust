@@ -1,5 +1,5 @@
 pub fn char_length(s: &str) -> usize {
-    s.to_string().chars().count()
+    s.chars().count()
 }
 
 #[cfg(test)]
