@@ -6,7 +6,6 @@ pub enum Suit {
     Diamond,
     Spade,
     Club,
-
 }
 #[derive(Debug, PartialEq, Clone, Copy)]
 pub enum Rank {
@@ -30,7 +29,7 @@ impl Suit {
             2 => Self::Diamond,
             3 => Self::Spade,
             4 => Self::Club,
-            _ =>unreachable!(),
+            _ => unreachable!(),
         }
     }
 }
@@ -38,7 +37,7 @@ impl Suit {
 impl Rank {
     pub fn random() -> Rank {
         let mut rng = rand::rng();
-    let val = rng.random_range(1..14);
+        let val = rng.random_range(1..14);
         Self::translate(val)
     }
 
@@ -59,11 +58,12 @@ pub struct Card {
     pub rank: Rank,
 }
 
-pub fn winner_card(card: &Card) -> bool {
-    *card == Card{
-        suit: Suit::Spade,
-        rank: Rank::Ace,
-    }
+pub fn winner_card(card: Card) -> bool {
+    card
+        == Card {
+            suit: Suit::Spade,
+            rank: Rank::Ace,
+        }
 }
 // #[cfg(test)]
 // mod tests {
