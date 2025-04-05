@@ -19,7 +19,7 @@ mod tests {
     fn it_works() {
         const SENTENCE: &str = "this is a very basic sentence with only a few repetitions. once again this is very basic but it should be enough for basic tests";
         let words = SENTENCE.split_ascii_whitespace().collect::<Vec<_>>();
-    let frequency_count = word_frequency_counter(words);
+    let frequency_count = word_frequency_counter(words.clone());
     let distict = nb_distinct_words(&frequency_count);
     let mut expected = HashMap::new();
         expected.insert("this", 2);
