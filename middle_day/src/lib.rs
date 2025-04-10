@@ -19,7 +19,8 @@ mod tests {
 
     #[test]
     fn it_works() {
-        let result = middle_day(1022).unwrap();
-        assert_eq!(result, true);
+        // let result = middle_day(1022).unwrap();
+        // assert_eq!(result, true);
+        assert_eq!(wd::Tue, middle_day(2019).unwrap());
     }
 }
