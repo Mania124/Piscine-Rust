@@ -35,12 +35,12 @@ pub fn calculate_macros(foods: &[Food]) -> json::JsonValue {
         "fats" => round_f64_smart(total_fats),
     }
 }
-pub fn round_f64_smart(val: f64) -> String {
+pub fn round_f64_smart(val: f64) -> f64 {
     let rounded = (val * 100.0).round() / 100.0;
     if (rounded * 10.0) % 1.0 == 0.0 {
-        format!("{:.1}", rounded)
+        (rounded * 10.0).round() / 10.0
     } else {
-        format!("{:.2}", rounded)
+        rounded
     }
 }
 
