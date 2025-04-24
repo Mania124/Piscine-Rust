@@ -5,9 +5,9 @@ pub struct Person<'a>{
 }
 
 impl <'a> Person <'a>{
-	pub fn new<'a>(name: &'a str) -> Person {
+	pub fn new(name: &'a str) -> Person <'a>{
         Person{
-            name: name,
+            name,
             age : 0,
         }
 	}
