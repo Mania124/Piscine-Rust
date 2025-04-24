@@ -1,11 +1,11 @@
 #[derive(Debug)]
-pub struct Person{
-	pub name: &str,
+pub struct Person<'a>{
+	pub name: &'a str,
 	pub age: u8,
 }
 
-impl Person <'a>{
-	pub fn new(name: &'a str) -> Person {
+impl <'a> Person <'a>{
+	pub fn new<'a>(name: &'a str) -> Person {
         Person{
             name: name,
             age : 0,
